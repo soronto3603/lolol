@@ -1,3 +1,4 @@
+
 <template>
   <div class=item-list>
     <div class=container>
@@ -16,6 +17,8 @@
     </div>
   </div>
 </template>
+
+
 <script>
 export default {
   data () {
