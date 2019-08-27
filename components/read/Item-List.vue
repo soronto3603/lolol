@@ -6,13 +6,14 @@
         <div class=info>
           <div class=item>
             <font class=title>{{node.name}}</font>
-            <font class=shortExpression>{{`"${node.shortExpression}"`}}</font>
+            <font class=shortExpression>{{`"${decodeURI(node.short_expression)}"`}}</font>
           </div>
-          <div class="item keywords">{{node.keywords.map(keyword => `#${keyword}`).join(" ")}}</div>
+          <div class="item keywords">{{node.keywords}}</div>
           <div class="item note">{{node.note}}</div>
-          <div class="item author">{{`작성자 : ${node.author}`}}</div>
+          <div class="item author">{{`작성자 : ${node.author_name}`}}</div>
         </div>
-        <div class="time">{{`${new Date(node.createdAt).getMonth()}월 ${new Date(node.createdAt).getDate()}일`}}</div>
+        <div class="time">{{`${new Date(node.create_at).getMonth()}월 ${new Date(node.create_at).getDate()}일`}}</div>
+        <!-- <div class="time">{{node.create_at}}</div> -->
       </div>
     </div>
   </div>
@@ -21,58 +22,23 @@
 
 <script>
 export default {
+  props: ["posts"],
   data () {
     return {
       nodes: []
     }
   },
   created () {
-    // test
-    this.nodes = [
-      {
-        id: 1,
-        location: {
-          lat: 32.33,
-          lng: 120.55,
-        },
-        name: "탐앤탐스",
-        shortExpression: "다시 옴",
-        keywords: ["주차가능", "중국집", "포장가능"],
-        note: "커피 완전 맛없음",
-        author: "lolol",
-        createdAt: "2019-08-08 00:00:00"
-      },
-      {
-        id: 2,
-        location: {
-          lat: 32.35,
-          lng: 120.56,
-        },
-        name: "사이공 칼국수",
-        shortExpression: "한번쯤은?",
-        keywords: ["주차불가능", "베트남", "배달가능"],
-        note: "아무거나 다 맛있지만, 특히 먹어야하는것은 정해져있다. 그거슨 바로바로 특제 우육탕면 쌀국수 그 쌀국수는 갈빗대가 함유되어있어 뜯고 씹고 맛보고 즐기고가 가능하게 되어진단 말입니다.",
-        author: "super mental",
-        createdAt: "2019-12-12 00:00:00"
-      },
-      {
-        id: 3,
-        location: {
-          lat: 32.35,
-          lng: 120.56,
-        },
-        name: "불난 술집",
-        shortExpression: "다신안감",
-        keywords: ["주차불가능", "술집", "혼술"],
-        note: "술은 역시 두명 이서 먹어야지!",
-        author: "wong's",
-        createdAt: "2019-12-12 00:00:00"
-      },
-    ]
+    fetch('http://54.180.119.222:8002/posts')
+      .then((resp) => resp.json())
+      .then((data)=>{
+        this.nodes = data;
+        console.log(this.nodes)
+    })
   },
   mounted () {
     
-
+    // this.nodes = this.posts;
   }
 }
 </script>

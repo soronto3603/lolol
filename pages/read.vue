@@ -15,6 +15,14 @@ export default {
     Map,
     Title,
     ItemList
+  },
+  data () {
+    return{
+      data: [],
+    }
+  },
+  mounted () {
+
   }
 }
 </script>

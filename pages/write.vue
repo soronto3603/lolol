@@ -2,7 +2,7 @@
   <div class="app">
     <!-- <Map lat=37.562932 lng=126.965079 /> -->
     <Greeting v-bind:who="name" />
-    <WriteForm />
+    <WriteForm :id="id" />
   </div>
 </template>
 <script>
@@ -16,27 +16,21 @@ export default {
       who: null,
       author: null,
       name: null,
+      id: null,
     }
   },
   cretaed () {
-    this.fetchAuthor();  
+  
   },
   mounted () {
     this.who=decodeURI(location.href.match(/who=.*/)[0].replace(/who=/,''));
-    fetch(`http://localhost:8002/author/who?id=${this.who}`)
-        .then((resp) => resp.json())
-        .then((data)=>{
-          this.name = data.name;
-        })
-  },
-  methods: {
-    fetchAuthor () {
-      fetch(`http://localhost:8002/author/who?id=${this.who}`)
-        .then(r=>{
-          console.log(r);
-          this.author = r;
-        })
-    }
+    console.log(this.who)
+    fetch(`http://54.180.119.222:8002/author/who?id=${this.who}`)
+      .then((resp) => resp.json())
+      .then((data)=>{
+        this.name = data.name;
+        this.id = data.no 
+    })
   },
   components: {
     Map,

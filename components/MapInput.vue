@@ -6,8 +6,12 @@
 import EventBus from '~/components/EventBus.vue';
 
 export default {
-  props: ["lat","lng","marker"],
+  props: ["lat","lng","marker","setPosition"],
   mounted () {
+    document.lolol = {
+      setPosition: this.setPosition
+    }
+    
     if (document.getElementById('map') && window.kakao) {
       const mapContainer = document.getElementById('map')
       const coords = new window.kakao.maps.LatLng(+this.lat, +this.lng)
@@ -32,9 +36,9 @@ export default {
           
           // 마커 위치를 클릭한 위치로 옮깁니다
           marker.setPosition(latlng)
+          document.lolol.setPosition(latlng.getLat(),latlng.getLng())
           
-          
-          EventBus.$emit('onchangemarker', latlng);
+          // EventBus.$emit('onchangemarker', latlng);
           // console.log(latlng)
           // var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, '
           // message += '경도는 ' + latlng.getLng() + ' 입니다'

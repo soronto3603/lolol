@@ -17,7 +17,7 @@
     <input type=text placeholder="가게 이름을 여기에 입력해주세요." v-model="name" />
     <div class=margin />
     <label>위치</label>
-    <MapInput lat=37.562932 lng=126.965079 />
+    <MapInput lat=37.562932 lng=126.965079 :set-position="setPosition" />
     <div class=margin />
     <label>짧게 표현?</label>
     <select v-model="shortExpression">
@@ -34,7 +34,7 @@
     <label>노트</label>
     <input type=text placeholder="간단한 소감을 입력해주세요. 😀" v-model="note" />
     <div class=margin />
-    <button>이대로 입력하기</button>
+    <button v-on:click="submitForm" >이대로 입력하기</button>
   </div>
 </template>
 <script>
@@ -42,18 +42,68 @@ import MapInput from '~/components/MapInput.vue'
 import EventBus from '~/components/EventBus.vue';
 
 export default {
+  props: ["id"],
   data () {
     return {
       name: null,
       shortExpression: null,
       keywords: null,
-      note: null
+      note: null,
+      lat: null,
+      lng: null,
+      setPosition: (lat,lng) => {
+        this.lat=lat;
+        this.lng=lng;
+      }
     }
   },
   mounted () {
-    EventBus.$on('onchangemarker', function(latlng) {
-      console.log(latlng);
-    });
+
+  },
+  methods: {
+    submitForm (event) {
+      if (!this.name) {
+        alert("가게 이름을 입력해주세요!");
+        return;
+      }
+      if (!this.shortExpression) {
+        alert("한마디로 선택해주세요!");
+        return;
+      }
+      // if (!this.keywords) {
+      //   alert("한마디로 선택해주세요!")
+      // }
+      // if (!this.note) {
+      //   alert("한마디로 선택해주세요!")
+      // }
+      if (!this.lat || !this.lng) {
+        alert("위치를 입력해주세요!");
+        return;
+      }
+      const obj = {
+        location: {
+          lat: this.lat,
+          lng: this.lng,
+        },
+        name: this.name,
+        shortExpression: this.shortExpression,
+        keywords: this.keywords,
+        note: this.note,
+        author_id: this.id,
+      }
+
+      fetch('http://54.180.119.222:8002/posts/insert', {
+      // fetch('http://localhost:8002/posts/insert', {
+        method: 'post',
+        body: JSON.stringify(obj)
+      }).then(function(response) {
+        return response.json();
+      }).then(function(data) {
+        if (data.code === "success") {
+          alert("성공적으로 등록되었습니다.");
+        }
+      });
+    }
   },
   components: {
     MapInput
