@@ -12,7 +12,7 @@
           <div class="item note">{{node.note}}</div>
           <div class="item author">{{`작성자 : ${node.author_name}`}}</div>
         </div>
-        <div class="time">{{`${new Date(node.create_at).getMonth()}월 ${new Date(node.create_at).getDate()}일`}}</div>
+        <div class="time">{{`${new Date(node.create_at).getMonth()+1}월 ${new Date(node.create_at).getDate()}일`}}</div>
         <!-- <div class="time">{{node.create_at}}</div> -->
       </div>
     </div>
