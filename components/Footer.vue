@@ -1,5 +1,5 @@
 <template>
-    <footer clss = "footer">
+    <footer class = "footer">
         <div class="footer-top first">
             <p>About</p>
             <ul class="list-container">
@@ -27,7 +27,7 @@
             </ul>
         </div>
         <div class="footer-bottom copyright">
-            <p>&copy; 2019 진짜맛집</p>
+            <p>Copyright &copy; 2019 진짜맛집 Corp</p>
         </div>
         <div class="footer-bottom empty">
 
