@@ -28,6 +28,6 @@ export default {
 </script>
 <style>
   html,body{
-    background-color: #589167;
+    background-color: #efece3;    
   }
 </style>

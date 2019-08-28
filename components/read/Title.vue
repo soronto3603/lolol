@@ -15,9 +15,9 @@ export default {
     margin-top: 20px;
 
     text-align: center;
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 200;
-    color: #efece3;
+    color: #589167;
   }
   .u-title .title{
     margin: 40px;
@@ -26,6 +26,6 @@ export default {
     text-align: center;
     font-size: 44px;
     font-weight: 500;
-    color:#efece3;
+    color:  #589167;
   }
 </style>

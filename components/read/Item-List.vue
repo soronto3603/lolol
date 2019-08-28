@@ -60,12 +60,12 @@ export default {
     padding: 20px;
     border-radius:10px;
  
-    box-shadow: 0px 0px 6px 3px #444444;
-    background-color: rgba(255,255,255, 0.7);
+    box-shadow: 0px 0px 3px 1px #211F1F;
+    background-color: rgba(88, 145, 103, 0.2);
     transition: 0.2s ease-in-out;
   }
   .item-list .container .node:hover{
-    background-color: rgba(255,255,255, 0.9);
+    background-color: rgba(255,255,255, 0.4);
   }
   .item-list .container .node .info{
     display: flex;
