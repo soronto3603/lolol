@@ -60,6 +60,7 @@ export default {
     margin: 20px;
     padding: 20px;
     border-radius:10px;
+    box-shadow: 0px 0px 6px 1px #444444;
 
     background-color: rgba(255,255,255, 0.8);
   }
@@ -72,20 +73,28 @@ export default {
     position: relative;
   }
   .item-list .container .node .info .item .title{
-    font-size: 25px;
+    font-size: 37px;
+    color : #211F1F;
   }
   .item-list .container .node .info .item .shortExpression{
     font-size: 16px;
 
-    color: #CF6679;
+    color: #a0c334;
   }
   .item-list .container .node .info .item.keywords{
-    color: #3700B3;
+    font-size: 12px;
+    color: #207561;
+    opacity: 0.6;
+    margin-bottom: 30px;
+  }
+  .item-list .container .node .info .item.keywords:hover{
+    opacity: 1;
+    font-weight: bold;
   }
   .item-list .container .node .info .item.note{
     font-size: 16px;
 
-    color:#242424;
+    color:#211F1F;
   }
   .item-list .container .node .info .item.author{
     margin-top:10px;

@@ -41,6 +41,6 @@ export default {
 </script>
 <style>
   html,body{
-    background-color: #121212;
+    background-color: #589167;
   }
 </style>

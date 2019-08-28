@@ -27,7 +27,7 @@
             </ul>
         </div>
         <div class="footer-bottom copyright">
-            <p>Copyright &copy; 2019 진짜맛집 Corp</p>
+            <p>Copyright &copy; {{new Date().getFullYear()}} 아는사람들 Corp</p>
         </div>
         <div class="footer-bottom empty">
 

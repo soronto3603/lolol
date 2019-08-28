@@ -16,16 +16,16 @@ export default {
 
     text-align: center;
     font-size: 18px;
-    font-weight: bolder;
-    color: #BB86FC;
+    font-weight: 200;
+    color: #efece3;
   }
   .u-title .title{
     margin: 40px;
     margin-top: 10px;
 
     text-align: center;
-    font-size: 40px;
-    font-weight: bolder;
-    color:rgba(255,255,255, 0.8);
+    font-size: 44px;
+    font-weight: 500;
+    color:#efece3;
   }
 </style>

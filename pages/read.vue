@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <!-- <Map lat=37.562932 lng=126.965079 /> -->
-    <Title title="맛집파인더" sub="지인들의" />
+    <Title title="아는 맛집" sub="아는 사람들의" />
     <ItemList />
   </div>
 </template>
@@ -28,6 +28,6 @@ export default {
 </script>
 <style>
   html,body{
-    background-color: #121212;
+    background-color: #589167;
   }
 </style>
