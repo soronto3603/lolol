@@ -56,13 +56,16 @@ export default {
   .item-list .container .node{
     display: flex;
     justify-content: space-between;
-
     margin: 20px;
     padding: 20px;
     border-radius:10px;
-    box-shadow: 0px 0px 6px 1px #444444;
-
-    background-color: rgba(255,255,255, 0.8);
+ 
+    box-shadow: 0px 0px 6px 3px #444444;
+    background-color: rgba(255,255,255, 0.7);
+    transition: 0.2s ease-in-out;
+  }
+  .item-list .container .node:hover{
+    background-color: rgba(255,255,255, 0.9);
   }
   .item-list .container .node .info{
     display: flex;
