@@ -15,20 +15,16 @@ module.exports = {
     script: [
       { type: "text/javascript", src: "//dapi.kakao.com/v2/maps/sdk.js?appkey=" + '91ef32cbb98498a5e1436865951221c9' },
     ],
-    modules: 
-    ['nuxt-fontawesome', {
-      imports: [
-        {
-          set: '@fortawesome/free-solid-svg-icons',
-          icons: ['fas']
-        },
-        {
-          set: '@fortawesome/free-solid-svg-icons',
-          icons: ['fab']
-        },
-      ]
-    }
-  ],
+    css: [
+      '@fortawesome/fontawesome-svg-core/styles.css'
+    ],
+    /*
+    ** Plugins to load before mounting the App
+    */
+    plugins: [
+      '~/plugins/fontawesome.js',
+  
+    ],
 },
   
 

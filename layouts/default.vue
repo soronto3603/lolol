@@ -24,6 +24,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: #efece3;
 }
 
 *, *:before, *:after {
@@ -38,6 +39,7 @@ html {
   color: #3b8070;
   text-decoration: none;
   padding: 10px 30px;
+  background-color: transparent;
 }
 
 .button--green:hover {

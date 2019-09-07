@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <!-- <Map lat=37.562932 lng=126.965079 /> -->
-    
     hi
   </div>
 </template>

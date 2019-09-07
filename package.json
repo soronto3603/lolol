@@ -17,10 +17,12 @@
     "port": "3333"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-brands-svg-icons": "^5.10.2",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
-    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0"
   },

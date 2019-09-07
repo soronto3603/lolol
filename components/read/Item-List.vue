@@ -2,16 +2,18 @@
 <template>
   <div class=item-list>
     <div class=container>
-      <div class=node v-for="node in nodes" :key="node.id">
-        <div class=info>
-          <div class=item>
-            <font class=title>{{node.name}}</font>
-            <font class=shortExpression>{{`"${decodeURI(node.short_expression)}"`}}</font>
+      <div class=node v-for="node in nodes" :key="node.no">
+        <nuxt-link :to="{name:'detail-id', params: { id:node.no }}">
+          <div class=info>
+            <div class=item>
+              <font class=title>{{node.name}}</font>
+              <font class=shortExpression>{{`"${decodeURI(node.short_expression)}"`}}</font>
+            </div>
+            <div class="item keywords">{{node.keywords}}</div>
+            <div class="item note">{{node.note}}</div>
+            <div class="item author">{{`작성자 : ${node.author_name}`}}</div>
           </div>
-          <div class="item keywords">{{node.keywords}}</div>
-          <div class="item note">{{node.note}}</div>
-          <div class="item author">{{`작성자 : ${node.author_name}`}}</div>
-        </div>
+          </nuxt-link>
         <div class="time">{{`${new Date(node.create_at).getMonth()+1}월 ${new Date(node.create_at).getDate()}일`}}</div>
         <!-- <div class="time">{{node.create_at}}</div> -->
       </div>
@@ -22,7 +24,6 @@
 
 <script>
 export default {
-  props: ["posts"],
   data () {
     return {
       nodes: []

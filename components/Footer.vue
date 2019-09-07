@@ -13,7 +13,7 @@
             <ul class="list-container">
                 <li>Index1</li>
                 <li>Index2</li>
-                <li>Index3</li>
+                <li><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }"  style="font-size: 22px"/></li>
             </ul>
         </div>
         <div class="footer-top third">
@@ -30,9 +30,9 @@
 
         </div>
         <div class="footer-bottom SNS">
-            <h4>Follow us on</h4>
+            <h4 class="follow__text">Follow us on</h4>
             <ul class="SNS-container">
-                <li><a href = "https://www.youtube.com">YouTube</a></li>
+                <li><a href = "https://www.youtube.com">Youtube</a></li>
                 <li><a href = "https://www.facebook.com">Facebook</a></li>
                 <li><a href = "https://www.github.com">Github</a></li>
                 <li><a href = "https://www.twitter.com">Twitter</a></li>
@@ -44,32 +44,39 @@
 </template>
 
 <style>
-footer{
+.footer{
     display : grid;
     grid-template-columns: repeat(3, 1fr);
-    padding : 14px;
     margin-bottom: 20px;
-    color:  #589167;
+    color: #589167;
+    width: 100%;
 }
 .footer-top{
     display : grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     place-items: center center;
-    border-right: 1px solid  #589167;
+    border-right: 1px solid #589167;
     cursor: default;
+    margin-top : 88px;
+
 }
 
 .footer-bottom{
     display: grid;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 20px;
     justify-items: flex-end;
     grid-gap : 18px;
     color : #211F1F;
+    
 
 }
 .SNS-container{
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 10px;
+    grid-gap : 10px;
+
+
 }
 .list-container{
     margin-top : 20px;
@@ -99,6 +106,9 @@ li:hover{
 }
 .third{
     border : none;
+}
+.follow__text{
+    font-weight:400;
 }
 
 </style>
