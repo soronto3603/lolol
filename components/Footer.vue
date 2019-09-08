@@ -19,15 +19,12 @@
         <div class="footer-top third">
             <p>...</p>
             <ul class="list-container">
-                <li>
-                    <nuxt-link to="/read">Read</nuxt-link>
-                </li>
                 <li>Index2</li>
                 <li>Index3</li>
             </ul>
         </div>
         <div class="footer-bottom copyright">
-            <p>Copyright &copy; 2019 진짜맛집 Corp</p>
+            <p>Copyright &copy; {{new Date().getFullYear()}} 아는사람들 Corp</p>
         </div>
         <div class="footer-bottom empty">
 
@@ -52,12 +49,12 @@ footer{
     grid-template-columns: repeat(3, 1fr);
     padding : 14px;
     margin-bottom: 20px;
-    color: whitesmoke;
+    color:  #589167;
 }
 .footer-top{
     display : grid;
     place-items: center center;
-    border-right: 1px solid whitesmoke;
+    border-right: 1px solid  #589167;
     cursor: default;
 }
 
@@ -66,6 +63,7 @@ footer{
     margin-top: 50px;
     justify-items: flex-end;
     grid-gap : 18px;
+    color : #211F1F;
 
 }
 .SNS-container{
@@ -76,16 +74,17 @@ footer{
 .list-container{
     margin-top : 20px;
     padding : 5px;
+    color : #589167;
 }
 a{
-    color : whitesmoke;
+    color : #211F1F;
     text-decoration-line: none;
 }
 li{
     display: grid;
     place-items: flex-end flex-end;
     list-style-type: none;
-    color : whitesmoke;
+    color : #589167;
     text-decoration-line: none;
     opacity: 0.5;
     transition: 0.3s ease-in-out;
@@ -93,6 +92,7 @@ li{
 }
 li:hover{
     opacity: 1;
+    color : #211F1F;
 }
 .copyright{
     place-items: flex-end flex-start ;

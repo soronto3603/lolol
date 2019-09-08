@@ -56,12 +56,16 @@ export default {
   .item-list .container .node{
     display: flex;
     justify-content: space-between;
-
     margin: 20px;
     padding: 20px;
     border-radius:10px;
-
-    background-color: rgba(255,255,255, 0.8);
+ 
+    box-shadow: 0px 0px 3px 1px #211F1F;
+    background-color: rgba(88, 145, 103, 0.2);
+    transition: 0.2s ease-in-out;
+  }
+  .item-list .container .node:hover{
+    background-color: rgba(255,255,255, 0.4);
   }
   .item-list .container .node .info{
     display: flex;
@@ -72,20 +76,28 @@ export default {
     position: relative;
   }
   .item-list .container .node .info .item .title{
-    font-size: 25px;
+    font-size: 37px;
+    color : #211F1F;
   }
   .item-list .container .node .info .item .shortExpression{
     font-size: 16px;
 
-    color: #CF6679;
+    color: #a0c334;
   }
   .item-list .container .node .info .item.keywords{
-    color: #3700B3;
+    font-size: 12px;
+    color: #207561;
+    opacity: 0.6;
+    margin-bottom: 30px;
+  }
+  .item-list .container .node .info .item.keywords:hover{
+    opacity: 1;
+    font-weight: bold;
   }
   .item-list .container .node .info .item.note{
     font-size: 16px;
 
-    color:#242424;
+    color:#211F1F;
   }
   .item-list .container .node .info .item.author{
     margin-top:10px;
